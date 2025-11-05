@@ -7,6 +7,7 @@ import Testimonials from './components/Testimonials';
 import ContactForm from './components/ContactForm';
 import Footer from './components/Footer';
 import CompareModal from './components/CompareModal';
+import DynamicFavicon from './components/DynamicFavicon';
 import { cars, testimonials, features } from './data/mockData';
 
 function App() {
@@ -70,6 +71,7 @@ function App() {
 
   return (
     <div className="min-h-screen">
+      <DynamicFavicon animationPath="/car-lottie.json" size={32} />
       <Header
         onSearch={handleSearch}
         favoriteCount={favorites.length}
