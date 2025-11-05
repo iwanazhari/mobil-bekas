@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react';
-import lottie from 'lottie-web';
 
 const DynamicFavicon = ({ animationPath, size = 32, updateInterval = 100 }) => {
   const animationRef = useRef(null);
@@ -39,6 +38,9 @@ const DynamicFavicon = ({ animationPath, size = 32, updateInterval = 100 }) => {
     // Load and setup Lottie animation
     const loadAnimation = async () => {
       try {
+        // Dynamic import lottie-web untuk code splitting
+        const lottie = (await import('lottie-web')).default;
+        
         const response = await fetch(animationPath);
         if (!response.ok) {
           throw new Error(`Failed to load animation: ${response.statusText}`);

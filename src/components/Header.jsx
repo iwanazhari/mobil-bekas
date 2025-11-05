@@ -1,15 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
 import { Search, Menu, X, Heart, GitCompare } from 'lucide-react';
 import { gsap } from 'gsap';
-import LottieIcon from './LottieIcon';
-import { loadLottieAnimation } from '../utils/loadLottie';
 
 const Header = ({ onSearch, favoriteCount, onCompareClick }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const [activeNav, setActiveNav] = useState('home');
-  const [lottieData, setLottieData] = useState(null);
   const headerRef = useRef(null);
   const logoRef = useRef(null);
   const mobileMenuRef = useRef(null);
